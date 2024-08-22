@@ -18,7 +18,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '1.8'
-        distribution: 'adoptopenjdk' # or 'temurin' depending on the distribution you prefer
+        distribution: 'temurin' # Use 'temurin' instead of 'adoptopenjdk'
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
