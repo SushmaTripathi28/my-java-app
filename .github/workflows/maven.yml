@@ -18,10 +18,16 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '8'
-        distribution: 'temurin' # Use 'temurin' for the distribution
+        distribution: 'temurin'
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
     - name: Run tests with Maven
       run: mvn test
+
+    - name: Upload JAR file
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-java-app
+        path: target/*.jar
